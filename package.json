@@ -1,0 +1,17 @@
+{
+  "name": "endp-test",
+  "version": "1.0.0",
+  "description": "A common method of organizing files on a computer is to store them in hierarchical directories. ",
+  "main": "src/directories.js",
+  "scripts": {
+    "compile": "npx tsc",
+    "test": "node --test test/DirectoryNodetest.js",
+    "start": "node src/index.js"
+  },
+  "author": "Martha De Luque",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.14.5",
+    "typescript": "^5.4.5"
+  }
+}
