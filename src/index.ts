@@ -58,7 +58,7 @@ var fileName = process.argv.slice(2)[0];
 const commandsLines = _readCommandsFile(fileName)
 const commandsList = _createCommandsList(commandsLines)
 commandsList.map(function(command){
-  const argsPrint = command.args? command.args : ''
+  const argsPrint = command.args? command.args.join(" ") : ''
   console.log(command.action +' '+ argsPrint)
   const commandFunction = _getCommandFunction(command.action, directory);
   commandFunction(command.args);

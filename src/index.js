@@ -53,7 +53,7 @@ var fileName = process.argv.slice(2)[0];
 var commandsLines = _readCommandsFile(fileName);
 var commandsList = _createCommandsList(commandsLines);
 commandsList.map(function (command) {
-    var argsPrint = command.args ? command.args : '';
+    var argsPrint = command.args ? command.args.join(" ") : '';
     console.log(command.action + ' ' + argsPrint);
     var commandFunction = _getCommandFunction(command.action, directory);
     commandFunction(command.args);
