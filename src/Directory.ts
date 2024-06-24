@@ -9,6 +9,7 @@ export class Directory {
     _log(spaces: number, state: DirectoryNode){
       console.log(' '.repeat(spaces)+state.key)
       if (state.children.length > 0){
+        state.sortChildren(state.children)
         state.children.forEach((child)=>{
           this._log(spaces+1, child)
         })        
@@ -18,6 +19,7 @@ export class Directory {
     list(){
       if (this.root.children.length > 0){
         this.root.children.forEach((child)=>{
+          this.root.sortChildren(this.root.children)
           this._log(0, child)
         })  
       }
@@ -35,6 +37,7 @@ export class Directory {
           const childIncluded: boolean = state.children.map(child => child.key).includes(newNode.key);
           if(!childIncluded) {
             state.children.push(newNode)
+            state.sortChildren(state.children)
           }
           state = state.children.find((child) => {
             return child.key === value

@@ -10,6 +10,7 @@ var Directory = /** @class */ (function () {
         var _this = this;
         console.log(' '.repeat(spaces) + state.key);
         if (state.children.length > 0) {
+            state.sortChildren(state.children);
             state.children.forEach(function (child) {
                 _this._log(spaces + 1, child);
             });
@@ -19,6 +20,7 @@ var Directory = /** @class */ (function () {
         var _this = this;
         if (this.root.children.length > 0) {
             this.root.children.forEach(function (child) {
+                _this.root.sortChildren(_this.root.children);
                 _this._log(0, child);
             });
         }
@@ -36,6 +38,7 @@ var Directory = /** @class */ (function () {
                 var childIncluded = state_1.children.map(function (child) { return child.key; }).includes(newNode.key);
                 if (!childIncluded) {
                     state_1.children.push(newNode);
+                    state_1.sortChildren(state_1.children);
                 }
                 state_1 = state_1.children.find(function (child) {
                     return child.key === value;
