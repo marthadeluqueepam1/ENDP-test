@@ -5,7 +5,7 @@
   "main": "src/directories.js",
   "scripts": {
     "compile": "npx tsc",
-    "test": "node --test test/DirectoryNodetest.js",
+    "test": "node --test",
     "start": "node src/index.js"
   },
   "author": "Martha De Luque",
